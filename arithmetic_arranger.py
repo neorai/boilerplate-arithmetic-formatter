@@ -25,4 +25,4 @@ def arithmetic_arranger(problems_list, display = False):
         
     return "ok"
 
-print(arithmetic_arranger(["32 + 698", "3401 - 2", "45 + 43", "123 + 49"]))
+print(arithmetic_arranger(["32 + 698", "3501 - 2", "45 + 43", "123 + 49"]))
