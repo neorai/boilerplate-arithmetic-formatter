@@ -32,6 +32,7 @@ def arithmetic_arranger(problems_list, display = False):
         line_break_result = "" if counter == (len(dic_problems) -1) else "    "
         dashes = "-" * (abs(bigger_len_value) + 2)
         line_break_dash = "" if counter == (len(dic_problems) -1)  else "    "
+        
         if display:
             if value[1] == "+":
                 result = int(value[0]) + int(value[2])
