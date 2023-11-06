@@ -51,7 +51,7 @@ def arithmetic_arranger(problems_list, display_result = False):
                 
             len_spc        = (abs(bigger_len_value) + 2) - len(str(result))
             spc_fourth_row = " " * len_spc
-            fourth_row     = fourth_row + spc_fourth_row + str(result) + break_result
+            fourth_row     += spc_fourth_row + str(result) + break_result
             break_dash     = "\n" if counter ==  (len_dic_problems -1)  else "    "
                        
         if int(value[0]) >= int(value[2]):
