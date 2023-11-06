@@ -62,5 +62,3 @@ def arithmetic_arranger(problems_list, display = False):
     arranged_problems = first_row + second_row + dashes_row + result_row
         
     return arranged_problems
-
-print(arithmetic_arranger(['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True))
