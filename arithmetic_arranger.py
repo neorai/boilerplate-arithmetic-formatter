@@ -19,52 +19,54 @@ def check_sintax_errors(problems_list, dic_problems):
             return "Error: Numbers must only contain digits."
         elif len(value[0]) > 4 or len(value[2]) > 4:
             return "Error: Numbers cannot be more than four digits."
-'''def space_break(row, dic_problems):
-
-def right_aligned(dic_problems, display_result):
-    for key, value in dic_problems.items():'''
         
 def arithmetic_arranger(problems_list, display_result = False):
     dic_problems = list_to_dic(problems_list)
-    error = check_sintax_errors(problems_list, dic_problems)
+    error        = check_sintax_errors(problems_list, dic_problems)
     if error: return error
     
     arranged_problems = ""
-    first_row = ""
+    first_row  = ""
     second_row = ""
-    third_row = ""
+    third_row  = ""
     fourth_row = "" 
     counter = 0
+    
     for key, value in dic_problems.items():
-        bigger_len_value = len(value[0]) if len(value[0]) >= len(value[2]) else len(value[2])
-        line_break = "\n" if counter == (len(dic_problems) -1) else "    "
-        break_result = "" if counter == (len(dic_problems) -1) else "    "
-        dashes = "-" * (abs(bigger_len_value) + 2)
-        break_dash = "" if counter == (len(dic_problems) -1)  else "    "
+        len_value0 = len(value[0])
+        len_value2 = len(value[2])
+        len_dic_problems = len(dic_problems)
+        
+        bigger_len_value = len_value0 if len_value0 >= len_value2 else len_value2
+        dashes       = "-" * (abs(bigger_len_value) + 2)
+        break_line   = "\n" if counter == (len_dic_problems -1) else "    "
+        break_result = ""   if counter == (len_dic_problems -1) else "    "
+        break_dash   = ""   if counter == (len_dic_problems -1) else "    "
         
         if display_result:
             if value[1] == "+":
                 result = int(value[0]) + int(value[2])
             if value[1] == "-":
                 result = int(value[0]) - int(value[2])
-            len_white_spc_fourth_row = (abs(bigger_len_value) + 2) - len(str(result))
-            white_spc_fourth_row = " " * len_white_spc_fourth_row
-            fourth_row = fourth_row + white_spc_fourth_row + str(result) + break_result
-            break_dash = "\n" if counter ==  (len(dic_problems) -1)  else "    "
+                
+            len_spc        = (abs(bigger_len_value) + 2) - len(str(result))
+            spc_fourth_row = " " * len_spc
+            fourth_row     = fourth_row + spc_fourth_row + str(result) + break_result
+            break_dash     = "\n" if counter ==  (len_dic_problems -1)  else "    "
                        
         if int(value[0]) >= int(value[2]):
-            r_aling_first_row = 2
-            r_aling_second_row = abs(len(value[0]) - len(value[2]))
+            spc_first_row  = 2
+            spc_second_row = abs(len_value0 - len_value2)
         else:    
-            r_aling_first_row = abs(len(value[0]) - len(value[2])) + 2
-            r_aling_second_row = 0
+            spc_first_row  = abs(len_value0 - len_value2) + 2
+            spc_second_row = 0
 
-        white_spc_first_row = " " * r_aling_first_row
-        white_spc_second_row = " " * r_aling_second_row
+        r_aling_first_row  = " " * spc_first_row
+        r_aling_second_row = " " * spc_second_row
 
-        first_row = first_row + white_spc_first_row + value[0] + line_break
-        second_row = second_row + value[1] + " " + white_spc_second_row + value[2] + line_break
-        third_row = third_row + dashes + break_dash
+        first_row  += r_aling_first_row + value[0] + break_line
+        second_row += value[1]          + " "      + r_aling_second_row + value[2] + break_line
+        third_row  += dashes            + break_dash
        
         counter += 1
 
