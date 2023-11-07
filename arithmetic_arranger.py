@@ -74,19 +74,19 @@ def arithmetic_arranger(list_problems, display_result=False):
         str: A formatted string containing the arranged problems and results.
 
     Example:
-        >>> problems = ["2 + 2", "5 - 3", "7 * 4"]
+        >>> problems = ["2 + 2", "5 - 3", "7 + 4"]
         >>> result = arithmetic_arranger(problems)
         >>> print(result)
            2       5       7
-        +  2    -  3    *  4
+        +  2    -  3    +  4
         ----    ----    ----
 
         >>> result = arithmetic_arranger(problems, True)
         >>> print(result)
            2       5       7
-        +  2    -  3    *  4
+        +  2    -  3    +  4
         ----    ----    ----
-           4       2      28
+           4       2      11
     """
     dic_problems = list_to_dic(list_problems)
     error = check_sintax_errors(list_problems, dic_problems)
