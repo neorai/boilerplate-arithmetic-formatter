@@ -34,7 +34,6 @@ def arithmetic_arranger(problems_list, display_result = False):
     for key, value in dic_problems.items():
         int_value0 = int(value[0])
         int_value2 = int(value[2])   
-        len_dic_problems = len(dic_problems)
            
         if value[1] == "+":
             result = int_value0 + int_value2
@@ -45,7 +44,7 @@ def arithmetic_arranger(problems_list, display_result = False):
         num_max = max(num_list) + 2
         dashes  = "-" * num_max 
 
-        if key == (len_dic_problems -1):
+        if key == (len(dic_problems) -1):
             white_space = ""
         else:
             white_space = "    "
