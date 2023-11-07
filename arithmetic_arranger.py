@@ -1,15 +1,15 @@
 import re
-def list_to_dic(problems_list):
+def list_to_dic(list_problems):
     counter = 0
     dic_problems = {}
-    for problem in problems_list:
+    for problem in list_problems:
         problem_split = problem.split()
         dic_problems[counter] = problem_split
         counter += 1
     return dic_problems
 
-def check_sintax_errors(problems_list, dic_problems):
-    if len(problems_list) > 5:
+def check_sintax_errors(list_problems, dic_problems):
+    if len(list_problems) > 5:
         return "Error: Too many problems."
         
     for key, value in dic_problems.items():
@@ -20,9 +20,9 @@ def check_sintax_errors(problems_list, dic_problems):
         elif len(value[0]) > 4 or len(value[2]) > 4:
             return "Error: Numbers cannot be more than four digits."
         
-def arithmetic_arranger(problems_list, display_result = False):
-    dic_problems = list_to_dic(problems_list)
-    error = check_sintax_errors(problems_list, dic_problems)
+def arithmetic_arranger(list_problems, display_result = False):
+    dic_problems = list_to_dic(list_problems)
+    error = check_sintax_errors(list_problems, dic_problems)
     if error: return error
     
     arranged_problems = ""
