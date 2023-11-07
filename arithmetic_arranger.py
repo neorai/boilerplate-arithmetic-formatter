@@ -18,9 +18,9 @@ def check_sintax_errors(list_problems, dic_problems):
     for key, value in dic_problems.items():
         if value[1] != "+" and value[1] != "-":
             return "Error: Operator must be '+' or '-'."
-        elif value[0].isnumeric() is False or value[2].isnumeric() is False:
+        if value[0].isnumeric() is False or value[2].isnumeric() is False:
             return "Error: Numbers must only contain digits."
-        elif len(value[0]) > 4 or len(value[2]) > 4:
+        if len(value[0]) > 4 or len(value[2]) > 4:
             return "Error: Numbers cannot be more than four digits."
 
 
